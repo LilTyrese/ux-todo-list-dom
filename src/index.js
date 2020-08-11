@@ -21,9 +21,18 @@ let todos = [
 function renderTodoApp() {
     let app = document.querySelector("#app")
     let h1 = document.createElement("h1")
-    // your code here
+    
+    let todoItems = ''
+    
+    for(let i = 0; i < todos.length; i++){
+        document.createElement('li')
+        let tasks = todos[i]
+        let checkbox = tasks.completed ? "checked" : " " 
+        todoItems += `<li> <input ${checkbox} type = "checkbox"> ${tasks.description} </li>`
+    }
+        app [`h1`]
 
-    h1.innerText = "Todo List"
+
 
     app.appendChild(h1)
     // and maybe some here
