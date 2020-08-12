@@ -29,13 +29,9 @@ function renderTodoApp() {
         let tasks = todos[i]
         let checkbox = tasks.completed ? "checked" : " " 
         todoItems += `<li> <input ${checkbox} type = "checkbox"> ${tasks.description} </li>`
+        ul.innerHtml += li;
     }
-        app [`h1`]
-
-
-
     app.appendChild(h1)
-    // and maybe some here
 }
 
 renderTodoApp()
