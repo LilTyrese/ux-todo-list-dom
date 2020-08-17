@@ -31,7 +31,16 @@ function renderTodoApp() {
         todoItems += `<li> <input ${checkbox} type = "checkbox"> ${tasks.description} </li>`
         ul.innerHtml += li;
     }
-    app.appendChild(h1)
+    newItem.appendChild(text)
+    document.getElementById("todoList").appendChild(newItem)
 }
 
 renderTodoApp()
+
+function todoList(){
+    let item = document.getElementById("todoInput").value
+    let text = document.createTextNode(item)
+    let newItem = document.createElement("li")
+    newItem.appendChild(text)
+    document.getElementById("todoList").appendChild(newItem)
+}

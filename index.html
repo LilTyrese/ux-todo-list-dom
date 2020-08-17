@@ -8,29 +8,23 @@
 </head>
 
 <body>
+  <header>
+    <h1>Tyrese's To-Do list</h1>
+  </header>
+
     <div id="app"></div>
+  
+    <form>
+      <input type="text" class="todo-input">
+      <button class="todo-button" type="submit" onclick="todoList()">Add Task</button>
 
-    <ul>
-        <li class="list-item">
-          <input type="checkbox"/>
-          Take Jim to the hair salon
-        </li>
-        <li class="list-item">
-          <input type="checkbox"/>
-          Drop off wedding invitation at mailbox
-        </li>
-        <li class="list-item">
-          <input type="checkbox"/>
-          Pick up the cake
-        </li>
-        <li class="list-item">
-          <input type="checkbox"/>
-          Call the caterers
-        </li>
-      </ul>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
 
-    <script src="src/index.js">
-    </script>
+    </form>
+
+    <script src="src/index.js"></script>
 </body>
 
 </html>
