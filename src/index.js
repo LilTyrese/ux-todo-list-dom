@@ -1,46 +1,41 @@
-
 let todos = [
-    {
-        completed: false,
-        description: "Take Jim to the hair salon"
-    },
-    {
-        completed: true,
-        description: "Drop off wedding invitation at mailbox"
-    },
-    {
-        completed: false,
-        description: "Pick up the cake"
-    },
-    {
-        completed: false,
-        description: "Call the caterers"
-    }
+  {
+    completed: false,
+    description: "Take Jim to the hair salon",
+  },
+  {
+    completed: true,
+    description: "Drop off wedding invitation at mailbox",
+  },
+  {
+    completed: false,
+    description: "Pick up the cake",
+  },
+  {
+    completed: false,
+    description: "Call the caterers",
+  },
 ];
 
 function renderTodoApp() {
-    let app = document.querySelector("#app")
-    let h1 = document.createElement("h1")
-    
-    let todoItems = ''
-    
-    for(let i = 0; i < todos.length; i++){
-        document.createElement('li')
-        let tasks = todos[i]
-        let checkbox = tasks.completed ? "checked" : " " 
-        todoItems += `<li> <input ${checkbox} type = "checkbox"> ${tasks.description} </li>`
-        ul.innerHtml += li;
-    }
-    newItem.appendChild(text)
-    document.getElementById("todoList").appendChild(newItem)
+  let app = document.querySelector("#app");
+  let h1 = document.createElement("h1");
+  let ul = document.createElement("ul");
+
+  h1.innerText = "Tyrese's To-do List";
+  app.appendChild(h1);
+
+  for (let i = 0; i < todos.length; i++) {
+      let li = document.createElement("li");
+    let tasks = todos[i];
+    let checkbox = tasks.completed ? "checked" : "";
+    let todoItems = `<input type="checkbox" ${checkbox}>${tasks.description}</input>`;
+
+    li.innerHTML += todoItems;
+    ul.appendChild(li);
+  }
+
+  app.appendChild(ul);
 }
 
-renderTodoApp()
-
-function todoList(){
-    let item = document.getElementById("todoInput").value
-    let text = document.createTextNode(item)
-    let newItem = document.createElement("li")
-    newItem.appendChild(text)
-    document.getElementById("todoList").appendChild(newItem)
-}
+renderTodoApp();
