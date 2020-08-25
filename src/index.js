@@ -19,48 +19,24 @@ let todos = [
 
 function renderTodoApp() {
   let app = document.querySelector("#app");
-  let h1 = document.createElement("h1");
-  let ul = document.createElement("ul");
-  
-  h1.innerText = "Tyrese's To-do List";
-  app.appendChild(h1);
+
+
+  let todoItems = ""
   
   for (let i = 0; i < todos.length; i++) {
-    let li = document.createElement("li");
     let tasks = todos[i];
     let checkbox = tasks.completed ? "checked" : "";
-    let todoItems = `<input type="checkbox" ${checkbox}>${tasks.description}</input>`;
+    todoItems += `<li><input type="checkbox" ${checkbox}>${tasks.description}</li>`;
     
-    li.innerHTML += todoItems;
-    ul.appendChild(li);
   }
-  
-  app.appendChild(ul);
+  app.innerHTML = `<ul>${todoItems}</ul>`
 }
-
-
 renderTodoApp();
 
-document.addEventListener("keyup", function(event)){
-  if(event.keyCode == 13){
-    const.todo = input.value;
-    if(todo){
-      addTodo(todo);
-    }
-    input.value = " ";
-  }
-}
-
-let todoBtn = document.querySelector('#todo-button')
-
-todoBtn.onclick = () => {
-  alert('An alert was triggered!')
-}
-
-let form = document.querySelector('#form')
-let formInput = document.querySelector('#form-input')
-
-form.onsubmit = (e) => {
-  e.preventDefault()
-  alert(formInput.value)
+function todoList(){
+  let input = document.querySelector(".todo-input").value
+  let newObject = {completed: false, description: input}
+  todos.push(newObject)
+  document.querySelector(".todo-input").value = ""
+  renderTodoApp()
 }
